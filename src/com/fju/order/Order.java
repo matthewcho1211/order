@@ -12,10 +12,11 @@ public class Order {
     }
 
     public int total(){
-        if(delivery.name.equals("Shopee")  && amount >= 199){
+        if(delivery instanceof ShopeeDelivery  && amount >= 199){
             return amount;
+        }else{
+            return amount + shipFeed;
         }
-        return amount + shipFeed;
     }
 
 }
